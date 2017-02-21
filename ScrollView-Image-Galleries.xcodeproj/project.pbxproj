@@ -14,6 +14,7 @@
 		A2528E861E5BA31400F2F996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2528E851E5BA31400F2F996 /* Assets.xcassets */; };
 		A2528E891E5BA31400F2F996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2528E871E5BA31400F2F996 /* LaunchScreen.storyboard */; };
 		A2528E941E5BA31400F2F996 /* ScrollView_Image_GalleriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2528E931E5BA31400F2F996 /* ScrollView_Image_GalleriesTests.m */; };
+		A2528EA01E5BBEC500F2F996 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2528E9F1E5BBEC500F2F996 /* DetailedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		A2528E8F1E5BA31400F2F996 /* ScrollView-Image-GalleriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ScrollView-Image-GalleriesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2528E931E5BA31400F2F996 /* ScrollView_Image_GalleriesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollView_Image_GalleriesTests.m; sourceTree = "<group>"; };
 		A2528E951E5BA31400F2F996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2528E9E1E5BBEC500F2F996 /* DetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedViewController.h; sourceTree = "<group>"; };
+		A2528E9F1E5BBEC500F2F996 /* DetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				A2528E7F1E5BA31400F2F996 /* ViewController.h */,
 				A2528E801E5BA31400F2F996 /* ViewController.m */,
 				A2528E821E5BA31400F2F996 /* Main.storyboard */,
+				A2528E9E1E5BBEC500F2F996 /* DetailedViewController.h */,
+				A2528E9F1E5BBEC500F2F996 /* DetailedViewController.m */,
 				A2528E851E5BA31400F2F996 /* Assets.xcassets */,
 				A2528E871E5BA31400F2F996 /* LaunchScreen.storyboard */,
 				A2528E8A1E5BA31400F2F996 /* Info.plist */,
@@ -215,6 +220,7 @@
 			files = (
 				A2528E811E5BA31400F2F996 /* ViewController.m in Sources */,
 				A2528E7E1E5BA31400F2F996 /* AppDelegate.m in Sources */,
+				A2528EA01E5BBEC500F2F996 /* DetailedViewController.m in Sources */,
 				A2528E7B1E5BA31400F2F996 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
