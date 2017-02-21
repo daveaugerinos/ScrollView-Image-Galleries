@@ -20,8 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.detailedImageView = [[UIImageView alloc] init];
+    
+    self.detailedImageView = [[UIImageView alloc] initWithImage:self.myImage];
     self.detailedImageView.translatesAutoresizingMaskIntoConstraints = NO;
     self.detailedImageView.contentMode = UIViewContentModeScaleAspectFit;
     
@@ -38,6 +38,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//- (void)setMyImage:(UIImage *)myImage {
+//    _myImage = myImage;
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.detailedImageView.image = myImage;
+//    });
+//}
 
 - (void)applyConstraints {
     
@@ -76,6 +84,24 @@
                                                                                        multiplier:1.0
                                                                                          constant:0];
     detailedImageViewRightConstraint.active = YES;
+    
+    NSLayoutConstraint *detailedImageViewWidthConstraint = [NSLayoutConstraint constraintWithItem:self.detailedImageView
+                                                                                        attribute:NSLayoutAttributeWidth
+                                                                                        relatedBy:NSLayoutRelationEqual
+                                                                                           toItem:self.detailedImageScrollView
+                                                                                        attribute:NSLayoutAttributeWidth
+                                                                                       multiplier:1.0
+                                                                                         constant:0];
+    detailedImageViewWidthConstraint.active = YES;
+    
+    NSLayoutConstraint *detailedImageViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.detailedImageView
+                                                                                        attribute:NSLayoutAttributeHeight
+                                                                                        relatedBy:NSLayoutRelationEqual
+                                                                                           toItem:self.detailedImageScrollView
+                                                                                        attribute:NSLayoutAttributeHeight
+                                                                                       multiplier:1.0
+                                                                                         constant:0];
+    detailedImageViewHeightConstraint.active = YES;
 }
 
 

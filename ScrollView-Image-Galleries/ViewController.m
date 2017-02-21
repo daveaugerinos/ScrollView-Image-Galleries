@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DetailedViewController.h"
 
 @interface ViewController ()
 
@@ -28,14 +29,17 @@
     self.imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse"]];
     self.imageView1.translatesAutoresizingMaskIntoConstraints = NO;
     self.imageView1.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView1.userInteractionEnabled = YES;
     
     self.imageView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse-in-Field"]];
     self.imageView2.translatesAutoresizingMaskIntoConstraints = NO;
     self.imageView2.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView2.userInteractionEnabled = YES;
     
     self.imageView3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse-night"]];
     self.imageView3.translatesAutoresizingMaskIntoConstraints = NO;
     self.imageView3.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView3.userInteractionEnabled = YES;
     
     [self.imageGalleryScrollView addSubview:self.imageView1];
     [self.imageGalleryScrollView addSubview:self.imageView2];
@@ -43,7 +47,37 @@
     
     [self applyContraints];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+    
+    [self.imageGalleryScrollView addGestureRecognizer:tapGesture];
+    
     self.imageGalleryScrollView.pagingEnabled = YES;
+}
+
+- (void)viewTapped:(UIGestureRecognizer *)sender {
+    
+    CGPoint location = [sender locationInView:self.imageGalleryScrollView];
+    UIView *view = [self.imageGalleryScrollView hitTest:location withEvent:nil];
+    
+    if ([view isKindOfClass:[UIImageView class]]) {
+        UIImageView *imageView = (UIImageView *)view;
+        UIImage *myImage = imageView.image;
+        
+        if(myImage) {
+            [self performSegueWithIdentifier:@"showDetailedImage" sender:myImage];
+        }
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString:@"showDetailedImage"]) {
+        DetailedViewController *detailedVC = [segue destinationViewController];
+        
+        if([sender isKindOfClass:[UIImage class]]) {
+            detailedVC.myImage = sender;
+        }
+    }
 }
 
 - (void)applyContraints {
