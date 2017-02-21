@@ -28,18 +28,26 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="N7E-ya-ssl"/>
                                 </connections>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="RbT-bK-CKf">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SrC-XK-Nhi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="048-aj-gVC"/>
                             <constraint firstItem="SrC-XK-Nhi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6kp-Qo-9xr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RbT-bK-CKf" secondAttribute="bottom" constant="20" id="j1A-vQ-pUh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SrC-XK-Nhi" secondAttribute="bottom" constant="8" id="jip-LQ-1Z3"/>
+                            <constraint firstItem="RbT-bK-CKf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mQR-0l-gjR"/>
                             <constraint firstItem="SrC-XK-Nhi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vOS-Ku-Hc5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gIL-ul-BS2"/>
                     <connections>
                         <outlet property="imageGalleryScrollView" destination="SrC-XK-Nhi" id="65e-8H-Jps"/>
+                        <outlet property="imagePageControl" destination="RbT-bK-CKf" id="off-CW-DOb"/>
                         <segue destination="jmY-FA-Wnc" kind="show" identifier="showDetailedImage" id="KhT-jI-5wv"/>
                     </connections>
                 </viewController>
@@ -60,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syj-9w-Uss">
-                                <rect key="frame" x="16" y="64" width="343" height="583"/>
+                                <rect key="frame" x="16" y="28" width="343" height="619"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="jmY-FA-Wnc" id="LRG-qi-GX0"/>

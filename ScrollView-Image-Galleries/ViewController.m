@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UIImageView *imageView2;
 @property (strong, nonatomic) UIImageView *imageView3;
 @property (weak, nonatomic) IBOutlet UIScrollView *imageGalleryScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *imagePageControl;
 
 @end
 
@@ -45,6 +46,8 @@
     [self.imageGalleryScrollView addSubview:self.imageView2];
     [self.imageGalleryScrollView addSubview:self.imageView3];
     
+    self.imagePageControl.numberOfPages = 3;
+    
     [self applyContraints];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
@@ -53,6 +56,14 @@
     
     self.imageGalleryScrollView.pagingEnabled = YES;
 }
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    int currentPage = (int)self.imageGalleryScrollView.contentOffset.x / self.imageGalleryScrollView.frame.size.width;
+    
+    self.imagePageControl.currentPage = currentPage;
+}
+
 
 - (void)viewTapped:(UIGestureRecognizer *)sender {
     
